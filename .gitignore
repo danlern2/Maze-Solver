@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+Maze Solver/.gitignore
+Maze Solver/pyproject.toml
+.pytest_cache/
+Maze Solver/tests/
+Maze Solver/src

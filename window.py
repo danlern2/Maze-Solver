@@ -1,5 +1,5 @@
 from __future__ import annotations
-from tkinter import Tk, BOTH, Canvas
+from tkinter import Tk, BOTH, Canvas, ttk
 # import time
 # import random
 # from typing import Any
@@ -10,11 +10,12 @@ class Window:
         self.width = width
         self.height = height
         self.__root = Tk()
-        self.__root.wm_title("Maze Solver")
+        self.__root.wm_title("Maze")
         self.__canvas = Canvas(self.__root, bg="gray", height=height, width=width)
         self.__canvas.pack(side="top", fill=BOTH, expand=1)
         self.__running = False
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
+        self.close_button()
 
     def redraw(self):
         self.__root.update_idletasks()
@@ -27,12 +28,14 @@ class Window:
 
     def close(self):
         self.__running = False
+        self.__root.destroy()
+
+    def close_button(self):
+        close_button = ttk.Button(self.__root, text="Close", command=self.close)
+        close_button.pack()
 
     def draw_line(self, line: Line, fill_color: str):
         line.draw(self.__canvas, fill_color)
-
-    # def remove_line(self, line: Line):
-    #     line.erase(self.__canvas)
 
 
 class Point:

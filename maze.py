@@ -75,7 +75,7 @@ class Maze:
             if self.win is None:
                 return new_cell
             new_cell.draw()
-            self.__animate(0.001)
+            self.__animate()
             return new_cell
 
         else:
@@ -87,7 +87,7 @@ class Maze:
             self.__animate()
             return cell
 
-    def __animate(self, sleep: float = 0.005):
+    def __animate(self, sleep: float = 0.0005):
         if self.win is None:
             return
 
@@ -237,7 +237,7 @@ class Maze:
                 elif r is True:
                     return True
         if cell == self.cells[self.end[0]][self.end[1]]:
-            time.sleep(1.0)
+            time.sleep(0.1)
             for i in range(0, len(path) - 1):
                 path[i].draw_move(path[i + 1], undo=False)
         return True

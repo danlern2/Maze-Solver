@@ -85,14 +85,14 @@ class Cell:
             return
         move = Line(self_center, to_cell_center)
         self.__win.draw_line(move, color)
-        self.__animate()
+        self.__animate(0.01)
 
-    def __animate(self):
+    def __animate(self, sleep: float = 0.0005):
         if self.__win is None:
             return
 
         self.__win.redraw()
-        time.sleep(0.01)
+        time.sleep(sleep)
 
     def draw_start_and_end(self):
         self_center_x = (self._x2 - self._x1) // 2 + self._x1

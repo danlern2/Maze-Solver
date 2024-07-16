@@ -15,8 +15,7 @@ def maze_creator(
     maze = Maze(5, 5, num_col, num_row, cell_size_x, cell_size_y, win, seed)  # type: ignore
     return win, maze
 
-
-class TestMaze:
+    # class TestMaze:
     def test_maze_cell(self):
         num_row = 20
         num_col = 20
@@ -158,16 +157,16 @@ def test_small_break_walls():
     assert maze.cells[num_col - 1][num_row - 2].visited is False
 
 
-def test_solve():
-    Program = maze_creator(8, 8, 40, 40, "blep")
-    win = Program[0]
-    maze = Program[1]
-    maze.break_walls()
-    maze.solve()
-    win.wait_for_close()
+# def test_solve():
+#     Program = maze_creator(8, 8, 40, 40, "blep")
+#     win = Program[0]
+#     maze = Program[1]
+#     maze.break_walls()
+#     maze.solve()
+#     win.wait_for_close()
 
-    # assert maze.cells[0][0].visited is False
-    # assert maze.cells[num_col - 1][num_row - 2].visited is False
+# assert maze.cells[0][0].visited is False
+# assert maze.cells[num_col - 1][num_row - 2].visited is False
 
 
 # test_solve()

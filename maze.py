@@ -31,6 +31,8 @@ class Maze:
         self.cell_size_x = cell_size_x
         self.cell_size_y = cell_size_y
         self.win = win
+        # if self.win is not None:
+        #     self.win.wait_for_close()
         if seed is not None:
             self.seed = random.seed(seed)
             self.__random_seed = True
